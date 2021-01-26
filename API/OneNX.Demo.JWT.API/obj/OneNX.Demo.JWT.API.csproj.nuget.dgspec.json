@@ -1,33 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Workspace\\JWT\\API\\OneNX.Demo.JWT.API\\OneNX.Demo.JWT.API.csproj": {}
+    "D:\\Workspace\\jwtdemo\\API\\OneNX.Demo.JWT.API\\OneNX.Demo.JWT.API.csproj": {}
   },
   "projects": {
-    "D:\\Workspace\\JWT\\API\\OneNX.Demo.JWT.API\\OneNX.Demo.JWT.API.csproj": {
+    "D:\\Workspace\\jwtdemo\\API\\OneNX.Demo.JWT.API\\OneNX.Demo.JWT.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Workspace\\JWT\\API\\OneNX.Demo.JWT.API\\OneNX.Demo.JWT.API.csproj",
+        "projectUniqueName": "D:\\Workspace\\jwtdemo\\API\\OneNX.Demo.JWT.API\\OneNX.Demo.JWT.API.csproj",
         "projectName": "OneNX.Demo.JWT.API",
-        "projectPath": "D:\\Workspace\\JWT\\API\\OneNX.Demo.JWT.API\\OneNX.Demo.JWT.API.csproj",
-        "packagesPath": "C:\\Users\\alfred\\.nuget\\packages\\",
-        "outputPath": "D:\\Workspace\\JWT\\API\\OneNX.Demo.JWT.API\\obj\\",
+        "projectPath": "D:\\Workspace\\jwtdemo\\API\\OneNX.Demo.JWT.API\\OneNX.Demo.JWT.API.csproj",
+        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+        "outputPath": "D:\\Workspace\\jwtdemo\\API\\OneNX.Demo.JWT.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\alfred\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\Workspace\\SMEE\\Nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,6 +41,16 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,6 +61,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
