@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -16,7 +16,26 @@ export class AuthComponent implements OnInit {
 
   login(username:string, password:string){
     // alert(`${username}-${password}`);
-    this.httpClient.get<any>(environment.api_url).subscribe(data => {
+    this.httpClient.post(environment.api_url, {username:username, password: password}, {
+      responseType: 'text',
+      observe: 'response',
+    }).subscribe((response:HttpResponse<any>) => {
+      let tokenHeader = response.headers.get("token");
+      let token = tokenHeader ? tokenHeader : "";
+      localStorage.setItem("token", "Bearer "+ token);
+      console.log(token);
+      console.log(response);
+    });
+  }
+
+  getWheather(){
+    let tokenStorage = localStorage.getItem("token");
+    let token = tokenStorage ?  tokenStorage : "";
+    this.httpClient.get("http://localhost:32872/WeatherForecast/",{
+      headers: new HttpHeaders({
+        Authorization: token
+      })
+    }).subscribe(data => {
       console.log(data);
     });
   }

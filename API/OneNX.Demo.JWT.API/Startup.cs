@@ -70,7 +70,6 @@ namespace OneNX.Demo.JWT.API
 				app.UseDeveloperExceptionPage();
 			}
 
-
 			app.UseHttpsRedirection().UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 			app.UseHttpsRedirection();
